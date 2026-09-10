@@ -1,1 +1,1 @@
-# My Demo Project
+# Group project
