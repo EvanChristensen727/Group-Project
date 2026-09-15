@@ -19,5 +19,5 @@ class Reservation{
     string student_Name;  
     string resource_ID;
     string date;
-}
+};
 #endif
