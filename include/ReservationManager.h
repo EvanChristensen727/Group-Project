@@ -11,9 +11,10 @@
     class ReservationManager
     {
         public:
-            void CreateReservation();
+            void AddReservation(Reservation r); // for adding a new reservation
             void CancelReservation();
             void UndoCancel();
+            void SearchReservation();
         private:
             list<Reservation> currentReservs;
             stack<Reservation> cancelledReservs;
