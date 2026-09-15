@@ -10,6 +10,7 @@ class Reservation{
     string get_resource_ID();
     string get_date();
     void set_reservation_ID(int id);
+    static Reservation load_reservation(string line);
     Reservation(int s_ID, string s_Name, string resource_id, string date, int reserve_ID);
     Reservation(int s_ID, string s_Name, string resource_id, string date);
     
