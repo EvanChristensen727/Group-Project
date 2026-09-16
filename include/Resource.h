@@ -11,14 +11,14 @@ class Resource{
 	public:
 		Resource();
 		Resource(string resource_ID, string name, string type, bool available);
-		int getAvailable();
+		bool getAvailable();
 		void setAvailable(bool state);
-		int getResource_ID();
+		string getResource_ID();
 		void setResource_ID(string r_ID);
 		string getName();
 		void setName(string name);
 		string getType();
-		void getType(string type);
+		void setType(string type);
 
 	private:
 		string resource_ID;
