@@ -1,1 +1,42 @@
+#ifndef RESOURCE_H
+#define RESOURCE_H
 
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Resource{
+
+	public:
+		Resource();
+		Resource(string resource_ID, string name, string type, bool available);
+		int getAvailable();
+		void setAvailable(bool state);
+		int getResource_ID();
+		void setResource_ID(string r_ID);
+		string getName();
+		void setName(string name);
+		string getType();
+		void getType(string type);
+
+	private:
+		string resource_ID;
+		string name;
+		string type;
+		bool available;
+};
+
+
+class ResourceManager{
+	public:
+		void getFromFile();
+		void displayResources();
+		//void searchResources(string criteria);
+		//void sortResources(string criteria); //not sure about this one yet
+
+	private:
+	 	vector<Resource> Resource_List; 
+};
+
+#endif
