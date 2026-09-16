@@ -19,6 +19,6 @@
             list<Reservation> currentReservs;
             stack<Reservation> cancelledReservs;
             queue<Reservation> waitingList;
-    }
+    };
 
 #endif
