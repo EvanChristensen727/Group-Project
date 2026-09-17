@@ -80,3 +80,9 @@ void ResourceManager::getFromFile()
 		Resource_List.push_back(current);
 	}
 }
+
+void ResourceManager::displayResources(){
+	for (auto it : Resource_List){
+		cout << it.getResource_ID() << " | " << it.getName() << " | " << it.getType() << " | " << it.getAvailable() << endl;
+	}
+}
