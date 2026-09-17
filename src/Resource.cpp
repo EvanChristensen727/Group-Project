@@ -1,4 +1,6 @@
 #include <fstream>
+#include <sstream>
+#include <iostream>
 #include "Resource.h"
 
 Resource::Resource(){
@@ -50,3 +52,31 @@ void Resource::setAvailable(bool state){
 }
 
 //TODO ResourceManager
+void ResourceManager::getFromFile()
+{
+	string line;
+	string id;
+	string name;
+	string type;
+	string status;
+	bool state;
+	
+
+	ifstream inputFile("resources.txt");
+
+	if(!inputFile.is_open()){
+		std::cout << "ERROR: Unable to open resource file" << endl;
+		return;
+	}
+	while (getline(inputFile, line)){
+		std::stringstream ss(line);
+		getline(ss, id, '|');
+		getline(ss, name, '|');
+		getline(ss, type, '|');
+		getline(ss, status);
+		
+		state = (status == "Available") ? true : false;
+		Resource current(id, name ,type, state);
+		Resource_List.push_back(current);
+	}
+}
