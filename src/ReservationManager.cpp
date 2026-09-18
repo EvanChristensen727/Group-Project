@@ -63,9 +63,8 @@ void ReservationManager::UndoCancel()
 void ReservationManager::PrintReservations()
 {
     list<Reservation>::iterator it;
-    int i = 0; //TODO
     for (it = currentReservs.begin(); it != currentReservs.end(); it++)
     {
-        cout << i << endl;
+        cout << "Reservation ID: " << (*it).get_reservation_ID() << " Resource " << (*it).get_resource_ID() << " reserved by " << (*it).get_student_name() << " (" << (*it).get_student_ID << ") on " << (*it).get_date << endl;
     }
 }
