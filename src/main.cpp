@@ -2,9 +2,8 @@
 #include "Resource.h"
 #include "ReservationManager.h"
 
-
 using namespace std;
 
-int main(){
+int main() {
   return 0;
 }
