@@ -10,9 +10,9 @@ void ReservationManager::SearchReservation(string rId)
     //TODO
 }
 
-void ReservationManager::AddReservation(Reservation r)
+string ReservationManager::AddReservation(Reservation r)
 {
-    //TODO: check if the resource is available 
+    //resource checked for availability before this
 
     //check if it has an id
     if (r.get_reservation_ID() == -1) 
@@ -25,9 +25,10 @@ void ReservationManager::AddReservation(Reservation r)
 
     //add it
     currentReservs.push_back(r);
+    return r.get_resource_ID();
 }
 
-void ReservationManager::CancelReservation(int id)
+string ReservationManager::CancelReservation(int id)
 {
     //search for id
     list<Reservation>::iterator it;
@@ -36,13 +37,15 @@ void ReservationManager::CancelReservation(int id)
         if ((*it).get_reservation_ID() == id)
         {
             //TODO: make resource available
+            string rId = (*it).get_resource_ID()
             cancelledReservs.push(*it);
             currentReservs.erase(it);
             cout << "Reservation ID " << id << " Cancelled." << endl; 
-            return; //exit function.
+            return rId; //exit function.
         }
     }
     cout << "Reservation ID " << id << " Does Not Exist." << endl; 
+    return "";
 }
 
 void ReservationManager::UndoCancel()
@@ -55,4 +58,14 @@ void ReservationManager::UndoCancel()
     currentReservs.push_back(cancelledReservs.top());
     cancelledReservs.pop();
     cout << "Reservation Restored Successfully." << endl;
+}
+
+void ReservationManager::PrintReservations()
+{
+    list<Reservation>::iterator it;
+    int i = 0; //TODO
+    for (it = currentReservs.begin(); it != currentReservs.end(); it++)
+    {
+        cout << i << endl;
+    }
 }
