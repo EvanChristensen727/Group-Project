@@ -34,7 +34,9 @@ class ResourceManager{
 		void displayResources();
 		//void searchResources(string criteria);
 		//void sortResources(string criteria); //not sure about this one yet
-		void setResourceAvailabilty(string r_ID, bool state);
+		void setResourceAvailability(string r_ID, bool state);
+		bool resourceExists(string r_ID);
+		bool isAvailable(string r_ID);
 	private:
 	 	vector<Resource> Resource_List; 
 };

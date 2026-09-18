@@ -87,9 +87,37 @@ void ResourceManager::displayResources(){
 	}
 }
 
-void ResourceManager::setResourceAvailabilty(string id, bool state){
-	for (auto it : Resource_List){
+void ResourceManager::setResourceAvailability(string id, bool state){
+	for (auto& it : Resource_List){
 		if (it.getResource_ID() == id)
+		{
 			it.setAvailable(state);
+			return;
+		}
 	}
 }
+
+bool ResourceManager::isAvailable(string r_ID){
+	for (auto& it : Resource_List){
+		if (it.getResource_ID() == r_ID)
+		{
+			return it.getAvailable();
+		}
+	}	
+	
+	cout << "Error No such Resource." << endl;
+	return false;			
+}
+
+bool ResourceManager::resourceExists(string r_ID){
+	for (auto& it : Resource_List){
+		if (it.getResource_ID() == r_ID)
+		{
+			return true;
+		}
+	}
+	
+	return false;
+}
+
+
