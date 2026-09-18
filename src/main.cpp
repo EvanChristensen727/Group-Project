@@ -5,5 +5,7 @@
 using namespace std;
 
 int main() {
+  ReservationManager manager;
+  //scan in all the things
   return 0;
 }
