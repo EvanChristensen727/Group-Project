@@ -86,3 +86,10 @@ void ResourceManager::displayResources(){
 		cout << it.getResource_ID() << " | " << it.getName() << " | " << it.getType() << " | " << it.getAvailable() << endl;
 	}
 }
+
+void ResourceManager::setResourceAvailabilty(string id, bool state){
+	for (auto it : Resource_List){
+		if (it.getResource_ID() == id)
+			it.setAvailable(state);
+	}
+}
