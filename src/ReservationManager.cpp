@@ -1,18 +1,13 @@
 #include "ReservationManager.h"
 
-ReservationManager::ReservationManager() 
-{
-
-}
-
 void ReservationManager::SearchReservation(int id)
 {
-    //fuuuuck
+    //TODO
 }
 
 void ReservationManager::SearchReservation(string rId)
 {
-    //FUUUUUUCK
+    //TODO
 }
 
 void ReservationManager::AddReservation(Reservation r)
@@ -35,6 +30,19 @@ void ReservationManager::AddReservation(Reservation r)
 void ReservationManager::CancelReservation(int id)
 {
     //search for id
+    list<Reservation>::iterator it;
+    for (it = currentReservs.begin(); it != currentReservs.end(); it++)
+    {
+        if ((*it).get_reservation_ID() == id)
+        {
+            //TODO: make resource available
+            cancelledReservs.push(*it);
+            currentReservs.erase(it);
+            cout << "Reservation ID " << id << " Cancelled." << endl; 
+            return; //exit function.
+        }
+    }
+    cout << "Reservation ID " << id << " Does Not Exist." << endl; 
 }
 
 void ReservationManager::UndoCancel()
