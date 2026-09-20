@@ -11,6 +11,7 @@ int main() {
   ResourceList.getFromFile();
 
   int userSelect = -1;
+  string userInput;
 
 
   //scan in all the things
@@ -39,6 +40,11 @@ int main() {
 		case 2:
 			break;
 		case 3:
+			cout << "Enter The Reservation Id to cancel: ";
+			cin >> userInput;
+			manager.CancelReservation(stoi(userInput));
+			//convert CancelResercation too bool so we can tell if complete?
+			
 			break;
 		case 4:
 			break;
