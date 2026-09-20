@@ -57,7 +57,7 @@ void ReservationManager::AddToWaitingList(Reservation r)
 
 void ReservationManager::CheckWaitingList(string rId)
 {
-    if (waitingList.front().get_reservation_ID == rId)
+    if (waitingList.front().get_resource_ID == rId)
     {
         AddReservation(waitingList.front());
         waitingList.pop();
