@@ -16,9 +16,10 @@
             void SearchReservation(string rId); //search by resource id
             string AddReservation(Reservation r); // for adding a new reservation, string returned is resource ID to set to unavailable
             string CancelReservation(int id); //cancel a reservation, string returned is resource ID to set to available
+            void AddToWaitingList(Reservation r); //adds to waiting list.
             void UndoCancel();
             void PrintReservations();
-	    void ReservationsFromFile();
+	        void ReservationsFromFile();
         private:
             list<Reservation> currentReservs;
             stack<Reservation> cancelledReservs;

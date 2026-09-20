@@ -46,8 +46,15 @@ int main() {
 			getline(cin, res_ID, ',');
 			getline(cin, name, ',');
 			getline(cin, date);
-			
-			manager.AddReservation(Reservation(stoi(student_ID), name, res_ID, date));
+
+			if (!ResourceList.isAvailable(res_ID))
+			{
+				manager.AddToWaitingList(Reservation(stoi(student_ID), name, res_ID, date));
+			}
+			else
+			{
+				manager.AddReservation(Reservation(stoi(student_ID), name, res_ID, date));
+			}
 			
 			break;
 		case 3:

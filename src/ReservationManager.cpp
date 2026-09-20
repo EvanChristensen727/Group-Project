@@ -50,6 +50,12 @@ string ReservationManager::CancelReservation(int id)
     return "";
 }
 
+void ReservationManager::AddToWaitingList(Reservation r)
+{
+    cout << "Resource unavailable, added to waiting list." << endl;
+    waitingList.push(r);
+}
+
 void ReservationManager::UndoCancel()
 {
     if (cancelledReservs.empty())
