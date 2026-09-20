@@ -54,6 +54,10 @@ int main() {
 		case 4:
 			break;
 		case 5:
+			string res_ID;
+			cout << "Please enter the reservation ID that you would like to uncancel: ";
+			cin >> res_ID;
+			manager.UndoCancel(res_ID);
 			break;
 		case 6:
 			break;
