@@ -67,7 +67,7 @@ void ReservationManager::PrintReservations()
     list<Reservation>::iterator it;
     for (it = currentReservs.begin(); it != currentReservs.end(); it++)
     {
-        cout << "Reservation ID: " << (*it).get_reservation_ID() << " Resource " << (*it).get_resource_ID() << " reserved by " << (*it).get_student_name() << " (" << (*it).get_student_ID << ") on " << (*it).get_date << endl;
+        cout << "Reservation ID: " << (*it).get_reservation_ID() << " Resource " << (*it).get_resource_ID() << " reserved by " << (*it).get_student_name() << " (" << (*it).get_student_ID() << ") on " << (*it).get_date() << endl;
     }
 }
 
@@ -97,7 +97,7 @@ void ReservationManager::ReservationsFromFile()
 		getline(ss, date);
 
 		//Create a new reservation object and add it to the list
-		Reservation current(s_id, s_Name, resource_ID, date, res_ID);
+		Reservation current(stoi(s_ID), s_Name, resource_ID, date, stoi(res_ID));
 		currentReservs.push_back(current);
 		
 	}
