@@ -12,7 +12,7 @@ void ReservationManager::SearchReservation(string rId)
     //TODO
 }
 
-string ReservationManager::AddReservation(Reservation r)
+void ReservationManager::AddReservation(Reservation r)
 {
     //resource checked for availability before this
 
@@ -27,7 +27,6 @@ string ReservationManager::AddReservation(Reservation r)
 
     //add it
     currentReservs.push_back(r);
-    return r.get_resource_ID();
 }
 
 string ReservationManager::CancelReservation(int id)
@@ -54,6 +53,15 @@ void ReservationManager::AddToWaitingList(Reservation r)
 {
     cout << "Resource unavailable, added to waiting list." << endl;
     waitingList.push(r);
+}
+
+void ReservationManager::CheckWaitingList(string rId)
+{
+    if (waitingList.front().get_reservation_ID == rId)
+    {
+        AddReservation(waitingList.front());
+        waitingList.pop();
+    }
 }
 
 void ReservationManager::UndoCancel()

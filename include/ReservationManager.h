@@ -14,9 +14,10 @@
         public:
             void SearchReservation(int id); //search by reservation id
             void SearchReservation(string rId); //search by resource id
-            string AddReservation(Reservation r); // for adding a new reservation, string returned is resource ID to set to unavailable
+            void AddReservation(Reservation r); // for adding a new reservation, string returned is resource ID to set to unavailable
             string CancelReservation(int id); //cancel a reservation, string returned is resource ID to set to available
             void AddToWaitingList(Reservation r); //adds to waiting list.
+            void CheckWaitingList(string rId); //checks it.
             void UndoCancel();
             void PrintReservations();
 	        void ReservationsFromFile();

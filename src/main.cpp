@@ -54,18 +54,26 @@ int main() {
 			else
 			{
 				manager.AddReservation(Reservation(stoi(student_ID), name, res_ID, date));
+				ResourceList.setResourceAvailability(res_ID, false);
 			}
-			
+
 			break;
 		case 3:
 			cout << "Enter The Reservation Id to cancel: ";
 			cin >> userInput;
 			cout << endl;
-			manager.CancelReservation(stoi(userInput));
+			string tempRId = manager.CancelReservation(stoi(userInput)); //TRUST THE PROCESS
+			if (temp != "")
+			{
+				ResourceList.setResourceAvailability(tempRId, true);
+				manager.CheckWaitingList(tempRId); //queue things
+			}
 			//convert CancelResercation too bool so we can tell if complete?
 			
 			break;
 		case 4:
+			manager.PrintReservations(); //eugh
+			cout << endl;
 			break;
 		case 5:
 			manager.UndoCancel();
