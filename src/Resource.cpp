@@ -62,7 +62,7 @@ void ResourceManager::getFromFile()
 	bool state;
 	
 
-	ifstream inputFile("resources.txt");
+	ifstream inputFile("data/resources.txt");
 
 	if(!inputFile.is_open()){
 		std::cout << "ERROR: Unable to open resource file" << endl;

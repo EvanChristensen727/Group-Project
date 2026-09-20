@@ -9,6 +9,7 @@ int main() {
   ResourceManager ResourceList;
 
   ResourceList.getFromFile();
+  manager.ReservationsFromFile();
 
   int userSelect = -1;
   string userInput;
@@ -58,19 +59,20 @@ int main() {
 			}
 
 			break;
-		case 3:
+		case 3:{
 			cout << "Enter The Reservation Id to cancel: ";
 			cin >> userInput;
 			cout << endl;
 			string tempRId = manager.CancelReservation(stoi(userInput)); //TRUST THE PROCESS
-			if (temp != "")
+			if (tempRId != "")
 			{
 				ResourceList.setResourceAvailability(tempRId, true);
 				manager.CheckWaitingList(tempRId); //queue things
 			}
 			//convert CancelResercation too bool so we can tell if complete?
-			
+		       	
 			break;
+		       }
 		case 4:
 			manager.PrintReservations(); //eugh
 			cout << endl;

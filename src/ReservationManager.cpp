@@ -57,7 +57,7 @@ void ReservationManager::AddToWaitingList(Reservation r)
 
 void ReservationManager::CheckWaitingList(string rId)
 {
-    if (waitingList.front().get_resource_ID == rId)
+    if (waitingList.front().get_resource_ID() == rId)
     {
         AddReservation(waitingList.front());
         waitingList.pop();
@@ -95,7 +95,7 @@ void ReservationManager::ReservationsFromFile()
 	string date;
 	
 
-	ifstream inputFile("reservations.txt");
+	ifstream inputFile("data/reservations.txt");
 
 	if(!inputFile.is_open()){
 		std::cout << "ERROR: Unable to open reservation file" << endl;
