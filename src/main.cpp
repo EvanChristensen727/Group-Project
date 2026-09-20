@@ -42,6 +42,7 @@ int main() {
 		case 3:
 			cout << "Enter The Reservation Id to cancel: ";
 			cin >> userInput;
+			cout << endl;
 			manager.CancelReservation(stoi(userInput));
 			//convert CancelResercation too bool so we can tell if complete?
 			
