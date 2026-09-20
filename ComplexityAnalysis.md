@@ -10,7 +10,7 @@ CancelReservation() function does a linear search [ O(n) ] for the ID to be remo
 with both having a time complexity of O(1), leading to a O(n) time complexity.
 
 ## Waiting List Processing
-uh oh
+Because the Waiting List is processed in a queue, all it's processes have a time complexity of O(1).
 
 ## Undoing a Reservation
 Undoing a reservation just uses push and pop functions to handle a queue and re-add the reservation to the linked
