@@ -37,6 +37,17 @@ int main() {
 			cin.get(); //prevent menu from looping till user gets a look at reasources
 			break;
 		case 2:
+			string name, res_ID, date;
+			int student_ID;
+			cout << "Please enter the student ID, resource ID, student name, and current date seperated by commas: ";
+			getLine(cin, student_ID, ",");
+			getLine(cin, res_ID, ",");
+			getLine(cin, name, ",");
+			getlien(cin, date);
+			
+			Reservation cur = (student_ID, name, res_ID, date);
+			manager.AddReservation(cur);
+			
 			break;
 		case 3:
 			break;
