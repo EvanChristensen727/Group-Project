@@ -18,10 +18,10 @@ int main() {
   while(userSelect != 0){ //I have no compiled yet to check if this works
 	  cout << "===== Campus Resource Reservation System =====" << endl;
 	  cout << "1) View Resources " << endl; //done
-	  cout << "2) Create Reservation" << endl; 
-	  cout << "3) Cancel Reservation" << endl;
+	  cout << "2) Create Reservation" << endl; //done 
+	  cout << "3) Cancel Reservation" << endl; //done
 	  cout << "4) View Waiting List" << endl;
-	  cout << "5) Undo Cancellation" << endl;
+	  cout << "5) Undo Cancellation" << endl; //done
 	  cout << "6) Search Reservations" << endl; //not needed yet
 	  cout << "7) Sort Resources" << endl; //not needed yet
 	  cout << "8) Generate Report" << endl; //not needed yet?
