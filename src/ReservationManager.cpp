@@ -1,4 +1,6 @@
 #include "ReservationManager.h"
+#include <fstream>
+#include <sstream>
 
 void ReservationManager::SearchReservation(int id)
 {
@@ -37,7 +39,7 @@ string ReservationManager::CancelReservation(int id)
         if ((*it).get_reservation_ID() == id)
         {
             //TODO: make resource available
-            string rId = (*it).get_resource_ID()
+            string rId = (*it).get_resource_ID();
             cancelledReservs.push(*it);
             currentReservs.erase(it);
             cout << "Reservation ID " << id << " Cancelled." << endl; 
@@ -67,4 +69,32 @@ void ReservationManager::PrintReservations()
     {
         cout << "Reservation ID: " << (*it).get_reservation_ID() << " Resource " << (*it).get_resource_ID() << " reserved by " << (*it).get_student_name() << " (" << (*it).get_student_ID << ") on " << (*it).get_date << endl;
     }
+}
+
+void ReservationManager::ReservationsFromFile() //WIP CONVERTING FROM USE IN REASOURCES
+{
+	string line;
+	string res_ID;
+	string s_ID;
+	string s_Name;
+	string reasource_ID;
+	string date;
+	
+
+	ifstream inputFile("resources.txt");
+
+	if(!inputFile.is_open()){
+		std::cout << "ERROR: Unable to open resource file" << endl;
+		return;
+	}
+	while (getline(inputFile, line)){
+		stringstream ss(line);
+		getline(ss, res_ID, '|');
+		getline(ss, s_ID, '|');
+		getline(ss, s_Name, '|');
+		getline(ss, date);
+		
+		//Reservation current(res_ID, s_ID, s_Name, date);
+		//Resource_List.push_back(current);
+	}
 }
