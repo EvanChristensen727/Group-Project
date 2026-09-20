@@ -88,13 +88,17 @@ void ReservationManager::ReservationsFromFile() //WIP CONVERTING FROM USE IN REA
 		return;
 	}
 	while (getline(inputFile, line)){
+		//For each file get the strings related to attributes
 		stringstream ss(line);
 		getline(ss, res_ID, '|');
 		getline(ss, s_ID, '|');
 		getline(ss, s_Name, '|');
+		getline(ss, resource_ID, '|');
 		getline(ss, date);
 		
-		//Reservation current(res_ID, s_ID, s_Name, date);
-		//Resource_List.push_back(current);
+		Reservation current(stoi(s_id), s_Name, resource_ID, date, stoi(res_ID));
+		Resource_List.push_back(current);
+		
 	}
+	
 }
