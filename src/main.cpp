@@ -38,6 +38,17 @@ int main() {
 			cin.get(); //prevent menu from looping till user gets a look at reasources
 			break;
 		case 2:
+			string name, res_ID, date;
+			int student_ID;
+			cout << "Please enter the student ID, resource ID, student name, and current date seperated by commas: ";
+			getLine(cin, student_ID, ",");
+			getLine(cin, res_ID, ",");
+			getLine(cin, name, ",");
+			getlien(cin, date);
+			
+			Reservation cur = (student_ID, name, res_ID, date);
+			manager.AddReservation(cur);
+			
 			break;
 		case 3:
 			cout << "Enter The Reservation Id to cancel: ";
@@ -50,6 +61,10 @@ int main() {
 		case 4:
 			break;
 		case 5:
+			string res_ID;
+			cout << "Please enter the reservation ID that you would like to uncancel: ";
+			cin >> res_ID;
+			manager.UndoCancel(res_ID);
 			break;
 		case 6:
 			break;

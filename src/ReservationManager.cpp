@@ -71,20 +71,20 @@ void ReservationManager::PrintReservations()
     }
 }
 
-void ReservationManager::ReservationsFromFile() //WIP CONVERTING FROM USE IN REASOURCES
+void ReservationManager::ReservationsFromFile() 
 {
 	string line;
 	string res_ID;
 	string s_ID;
 	string s_Name;
-	string reasource_ID;
+	string resource_ID;
 	string date;
 	
 
-	ifstream inputFile("resources.txt");
+	ifstream inputFile("reservations.txt");
 
 	if(!inputFile.is_open()){
-		std::cout << "ERROR: Unable to open resource file" << endl;
+		std::cout << "ERROR: Unable to open reservation file" << endl;
 		return;
 	}
 	while (getline(inputFile, line)){
@@ -95,9 +95,10 @@ void ReservationManager::ReservationsFromFile() //WIP CONVERTING FROM USE IN REA
 		getline(ss, s_Name, '|');
 		getline(ss, resource_ID, '|');
 		getline(ss, date);
-		
-		Reservation current(stoi(s_id), s_Name, resource_ID, date, stoi(res_ID));
-		Resource_List.push_back(current);
+
+		//Create a new reservation object and add it to the list
+		Reservation current(s_id, s_Name, resource_ID, date, res_ID);
+		currentReservs.push_back(current);
 		
 	}
 	
