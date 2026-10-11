@@ -23,7 +23,7 @@ void ReservationManager::SearchReservation(string rId)
     list<Reservation>::iterator it;
     for (it = currentReservs.begin(); it != currentReservs.end(); it++)
     {
-        if ((*it).get_reservation_ID() == id)
+        if ((*it).get_resource_ID() == id)
         {
             cout << "Reservation with Resource ID " << (*it).get_resource_ID() << ":" << cout;
             cout << "Reservation ID: " << (*it).get_reservation_ID() << endl;
