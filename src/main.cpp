@@ -84,6 +84,8 @@ int main() {
 			manager.UndoCancel();
 			break;
 		case 6:
+			cout << "Search by Reservation ID (1) or Resource ID (2)?" << endl;
+			cin >> userSelect;
 			break;
 		case 7:
 			break;
@@ -152,7 +154,7 @@ int main() {
 		case 0:
 			break;
 		default:
-			cout << "incorrect selection please try again" << endl;
+			cout << "Not a valid option, try again." << endl;
 			break;
 		
 	  }
