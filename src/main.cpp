@@ -86,6 +86,22 @@ int main() {
 		case 6:
 			cout << "Search by Reservation ID (1) or Resource ID (2)?" << endl;
 			cin >> userSelect;
+			if (userSelect == 1)
+			{
+				cout << "Enter Reservation ID:" << endl;
+				cin >> userSelect;
+				manager.SearchReservation(userSelect);
+			}
+			else if (userSelect == 2)
+			{
+				cout << "Enter Resource ID:" << endl;
+				cin >> userInput;
+				manager.SearchReservation(userInput);
+			}
+			else
+			{
+				cout << "Not Applicable." << endl;
+			}
 			break;
 		case 7:
 			ResourceList.sortResources("name");
