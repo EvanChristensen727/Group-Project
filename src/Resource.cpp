@@ -119,5 +119,23 @@ bool ResourceManager::resourceExists(string r_ID){
 	
 	return false;
 }
+//WIP Sort
+void ResourceManager::sortResources(string sort){
+	for (auto& it : Resource_List){
+		if(sort == "Type"){
 
+		}
+		else if(sort == "Name"){
 
+		}
+		else if(sort == "Status")
+	}
+}
+
+void ResourceManager::merge(int left,int right){
+
+}
+
+void ResourceManager::mergeSort(int left, int right){
+
+}

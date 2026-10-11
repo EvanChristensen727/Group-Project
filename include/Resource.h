@@ -37,8 +37,14 @@ class ResourceManager{
 		void setResourceAvailability(string r_ID, bool state); // mutator that iterates throught the vector for ID, then changes state to provided state.
 		bool resourceExists(string r_ID); // accessor that iterates through the vector for a given string ID then returns if the ID exists
 		bool isAvailable(string r_ID);  //accessor that iterates through the vector for a given string ID then returns the state of the ID
+		//sorting functions
+		void sortResources(string sort);
+		void mergeSort(int left, int right); //recursive magic
+		void merge(int left, int right);
+
 	private:
-	 	vector<Resource> Resource_List; 
+	 	vector<Resource> Resource_List;
+
 };
 
 #endif
