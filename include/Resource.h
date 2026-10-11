@@ -40,7 +40,7 @@ class ResourceManager{
 		//sorting functions
 		void sortResources(string sort);
 		void mergeSort(int left, int right); //recursive magic
-		void merge(int left, int right);
+		void merge(int left, int mid, int right);
 
 	private:
 	 	vector<Resource> Resource_List;

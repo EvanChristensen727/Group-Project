@@ -88,6 +88,8 @@ int main() {
 			cin >> userSelect;
 			break;
 		case 7:
+			ResourceList.sortResources("name");
+			ResourceList.displayResources();
 			break;
 		case 8: //Resource Reporting
 			{

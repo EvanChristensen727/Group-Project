@@ -1,4 +1,5 @@
 #include <fstream>
+#include <vector>
 #include <sstream>
 #include <iostream>
 #include "Resource.h"
@@ -119,23 +120,53 @@ bool ResourceManager::resourceExists(string r_ID){
 	
 	return false;
 }
-//WIP Sort
-void ResourceManager::sortResources(string sort){
-	for (auto& it : Resource_List){
-		if(sort == "Type"){
-
-		}
-		else if(sort == "Name"){
-
-		}
-		else if(sort == "Status")
+//Merge sort subsection
+void ResourceManager::sortResources(string sort){ //set as a seperate function for the main call for main clarity and to be update infuture for other sort options
+	if (sort == "name" && !Resource_List.empty()){
+		mergeSort(0, Resource_List.size() - 1);
 	}
 }
 
-void ResourceManager::merge(int left,int right){
+void ResourceManager::merge(int left,int mid, int right){ //this merges the the subvectors backgether sorting them as the are merged up
+	vector<Resource> temp;
+
+	int i = left;
+	int j = mid+1;
+
+	while (i <= mid && j <= right) {
+		if (Resource_List[i].getName() <= Resource_List[j].getName()){
+			temp.push_back(Resource_List[i]);
+			i++;
+		}
+		else {
+			temp.push_back(Resource_List[j]);
+			j++;
+		}
+	}
+
+	while (i <= mid) {
+		temp.push_back(Resource_List[i]);
+		i++;
+	}
+
+	while (j <= right) {
+		temp.push_back(Resource_List[j]);
+		j++;
+	}
+
+	for (int k = 0; k < static_cast<int>(temp.size()); k++) {
+		Resource_List[left + k] = temp[k];
+	}
 
 }
 
-void ResourceManager::mergeSort(int left, int right){
+void ResourceManager::mergeSort(int left, int right){ //recursion hurts my brain but this seperates out the main vector for the merge sort
+	if(left < right) {
+		int mid = left + (right - left) /2;
 
+		mergeSort(left, mid);
+		mergeSort(mid+1, right);
+
+		merge(left, mid, right);
+	}
 }
