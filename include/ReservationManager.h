@@ -21,6 +21,7 @@
             void UndoCancel();
             void PrintReservations();
 	        void ReservationsFromFile();
+            list<Reservation> GetReservations();
         private:
             list<Reservation> currentReservs;
             stack<Reservation> cancelledReservs;

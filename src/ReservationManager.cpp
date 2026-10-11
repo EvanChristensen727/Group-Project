@@ -85,6 +85,11 @@ void ReservationManager::PrintReservations()
     }
 }
 
+list<Reservation> ReservationManager::GetReservations(){
+    list<Reservation> copy(currentReservs);
+    return copy;
+}
+
 void ReservationManager::ReservationsFromFile() 
 {
 	string line;
