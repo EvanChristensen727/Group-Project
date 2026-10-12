@@ -18,6 +18,6 @@ by its ID and its resource, as well as get a report on all the resources and how
 
 If you want to exit the program, enter 0 in at the option select screen.
 
-## To Do 
-Implement Option 7: Sort Resources
-
+## Creating and Running the Program
+In the terminal, opened to the same directory the makefile is in, run the make command. This will create
+a .out file that you can open to run the program.
