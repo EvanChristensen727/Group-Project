@@ -9,7 +9,7 @@ void ReservationManager::SearchReservation(int id) //linear search
     {
         if ((*it).get_reservation_ID() == id)
         {
-            cout << "Reservation ID " << (*it).get_reservation_ID() << ":" << cout;
+            cout << "Reservation ID " << (*it).get_reservation_ID() << ":" << endl;
             cout << "Resource ID " << (*it).get_resource_ID() << " reserved by " <<  (*it).get_student_name()<< " (ID " <<  (*it).get_student_ID() << ")" << endl;
             cout << "Day of Reservation: " <<  (*it).get_date() << endl;
             return;
@@ -23,16 +23,16 @@ void ReservationManager::SearchReservation(string rId)
     list<Reservation>::iterator it;
     for (it = currentReservs.begin(); it != currentReservs.end(); it++)
     {
-        if ((*it).get_resource_ID() == id)
+        if ((*it).get_resource_ID() == rId)
         {
-            cout << "Reservation with Resource ID " << (*it).get_resource_ID() << ":" << cout;
+            cout << "Reservation with Resource ID " << (*it).get_resource_ID() << ":" << endl;
             cout << "Reservation ID: " << (*it).get_reservation_ID() << endl;
             cout << "Reserved by " <<  (*it).get_student_name() << " (ID " <<  (*it).get_student_ID() << ")" << endl;
             cout << "Day of Reservation: " <<  (*it).get_date() << endl;
             return;
         }
     }
-    cout << "Reservation associated Resource ID " << id << " does not exist." << endl;
+    cout << "Reservation associated Resource ID " << rId << " does not exist." << endl;
 }
 
 void ReservationManager::AddReservation(Reservation r)
