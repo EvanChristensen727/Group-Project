@@ -21,4 +21,4 @@ The search for a reservation is a linear search, making the time complexity O(n)
 both by ID and Resource ID.
 
 ## Sorting Reservations
-The function for sorting the reservations is a merge sort, which leads to a time complexity of O(nlogn)
+The function for sorting the reservations is a merge sort, which leads to a time complexity of O(nlogn).
