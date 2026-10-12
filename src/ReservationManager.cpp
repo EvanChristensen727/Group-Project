@@ -2,14 +2,37 @@
 #include <fstream>
 #include <sstream>
 
-void ReservationManager::SearchReservation(int id)
+void ReservationManager::SearchReservation(int id) //linear search
 {
-    //TODO
+    list<Reservation>::iterator it;
+    for (it = currentReservs.begin(); it != currentReservs.end(); it++)
+    {
+        if ((*it).get_reservation_ID() == id)
+        {
+            cout << "Reservation ID " << (*it).get_reservation_ID() << ":" << endl;
+            cout << "Resource ID " << (*it).get_resource_ID() << " reserved by " <<  (*it).get_student_name()<< " (ID " <<  (*it).get_student_ID() << ")" << endl;
+            cout << "Day of Reservation: " <<  (*it).get_date() << endl;
+            return;
+        }
+    }
+    cout << "Reservation associated with ID " << id << " does not exist." << endl;
 }
 
 void ReservationManager::SearchReservation(string rId)
 {
-    //TODO
+    list<Reservation>::iterator it;
+    for (it = currentReservs.begin(); it != currentReservs.end(); it++)
+    {
+        if ((*it).get_resource_ID() == rId)
+        {
+            cout << "Reservation with Resource ID " << (*it).get_resource_ID() << ":" << endl;
+            cout << "Reservation ID: " << (*it).get_reservation_ID() << endl;
+            cout << "Reserved by " <<  (*it).get_student_name() << " (ID " <<  (*it).get_student_ID() << ")" << endl;
+            cout << "Day of Reservation: " <<  (*it).get_date() << endl;
+            return;
+        }
+    }
+    cout << "Reservation associated Resource ID " << rId << " does not exist." << endl;
 }
 
 void ReservationManager::AddReservation(Reservation r)
@@ -37,7 +60,6 @@ string ReservationManager::CancelReservation(int id)
     {
         if ((*it).get_reservation_ID() == id)
         {
-            //TODO: make resource available
             string rId = (*it).get_resource_ID();
             cancelledReservs.push(*it);
             currentReservs.erase(it);
@@ -83,6 +105,11 @@ void ReservationManager::PrintReservations()
     {
         cout << "Reservation ID: " << (*it).get_reservation_ID() << " Resource " << (*it).get_resource_ID() << " reserved by " << (*it).get_student_name() << " (" << (*it).get_student_ID() << ") on " << (*it).get_date() << endl;
     }
+}
+
+list<Reservation> ReservationManager::GetReservations(){
+    list<Reservation> copy(currentReservs);
+    return copy;
 }
 
 void ReservationManager::ReservationsFromFile() 

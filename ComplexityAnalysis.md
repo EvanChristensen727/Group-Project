@@ -15,3 +15,10 @@ Because the Waiting List is processed in a queue, all it's processes have a time
 ## Undoing a Reservation
 Undoing a reservation just uses push and pop functions to handle a queue and re-add the reservation to the linked
 list, leading to a time complexity of O(1).
+
+## Searching a Reservation
+The search for a reservation is a linear search, making the time complexity O(n) for searching for a reservation
+both by ID and Resource ID.
+
+## Sorting Reservations
+The function for sorting the reservations is a merge sort, which leads to a time complexity of O(nlogn).
